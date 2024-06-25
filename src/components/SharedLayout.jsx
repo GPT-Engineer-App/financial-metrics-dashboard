@@ -9,6 +9,9 @@ import {
   Search,
   ShoppingCart,
   Users,
+  Briefcase,
+  BarChart,
+  DollarSign,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -59,6 +62,27 @@ function SharedLayout({ children }) {
                 <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
                 </Badge>
+              </a>
+              <a
+                href="/operations"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              >
+                <Briefcase className="h-4 w-4" />
+                Operations
+              </a>
+              <a
+                href="/marketing"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              >
+                <BarChart className="h-4 w-4" />
+                Marketing
+              </a>
+              <a
+                href="/sales"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              >
+                <DollarSign className="h-4 w-4" />
+                Sales
               </a>
             </nav>
           </div>
