@@ -1,26 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const DashboardMetric = ({ name, value, trend }) => {
   return (
-    <div className="dashboard-metric">
-      <h3 className="metric-name">{name}</h3>
-      <p className="metric-value">{value}</p>
-      <div className="metric-trend">
-        {trend.map((point, index) => (
-          <span key={index} className="trend-point">
-            {point}
-          </span>
-        ))}
-      </div>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>{name}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-2xl font-bold">{value}</p>
+        <div className="flex mt-2">
+          {trend.map((point, index) => (
+            <div
+              key={index}
+              className="w-2 bg-blue-500 mr-1"
+              style={{ height: `${point}px` }}
+            ></div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
-};
-
-DashboardMetric.propTypes = {
-  name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  trend: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default DashboardMetric;
